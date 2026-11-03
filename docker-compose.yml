@@ -1,0 +1,17 @@
+version: "3.0"
+services:
+  db:
+    container_name: "lyaushka_bot_db"
+    image: postgres:14.1-alpine
+    restart: always
+    environment:
+      - POSTGRES_USER=sixseven
+      - POSTGRES_PASSWORD=676767
+      - POSTGRES_DB=lyaushka_db
+    ports:
+      - "5432:5432"
+    networks:
+      - custom
+networks:
+  custom:
+    driver: bridge
